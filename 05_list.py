@@ -51,13 +51,13 @@
 #nums[2:5] = [350,410,555]
 #print(nums)
 
-#nums = [1,2,3,4,5] #모든 원소를 두 배로 만들기
-#nums[0] = nums[0] * 2
-#nums[1] = nums[1] * 2
-#nums[2] = nums[2] * 2
-#nums[3] = nums[3] * 2
-#nums[4] = nums[4] * 2
-#print(nums)
+nums = [1,2,3,4,5] #모든 원소를 두 배로 만들기
+nums[0] = nums[0] * 2
+nums[1] = nums[1] * 2
+nums[2] = nums[2] * 2
+nums[3] = nums[3] * 2
+nums[4] = nums[4] * 2
+print(nums)
 
 #items = ["a","b","c","d","e"] #리스트를 역순으로 슬라이싱하여 출력
 #print(items[::-1])
@@ -81,7 +81,7 @@
 #data = ["A", "B", "C", "D", "E", "F", "G", "H"]
 #[1~3번째요소] + [4~6번째요소] + [7~9번째요소] 순서로 세구간 나누고
 #각 구간을 역순으로 따로 출력 한 줄에 다 들어가게.
-#print(data[0:3][::-1], end = " ")
+#print(data[0:3][::-1], end = " ") #end = " " :공백 지우기 
 #print(data[3:6][::-1], end = " ")
 #print(data[6:9][::-1])
 #해당 범위 지정해 역순 [::-1] 넣고 end = " "로 줄 간격 지워버림)
