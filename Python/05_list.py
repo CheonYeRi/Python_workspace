@@ -51,13 +51,13 @@
 #nums[2:5] = [350,410,555]
 #print(nums)
 
-nums = [1,2,3,4,5] #모든 원소를 두 배로 만들기
-nums[0] = nums[0] * 2
-nums[1] = nums[1] * 2
-nums[2] = nums[2] * 2
-nums[3] = nums[3] * 2
-nums[4] = nums[4] * 2
-print(nums)
+#nums = [1,2,3,4,5] #모든 원소를 두 배로 만들기
+#nums[0] = nums[0] * 2
+#nums[1] = nums[1] * 2
+#nums[2] = nums[2] * 2
+#nums[3] = nums[3] * 2
+#nums[4] = nums[4] * 2
+#print(nums)
 
 #items = ["a","b","c","d","e"] #리스트를 역순으로 슬라이싱하여 출력
 #print(items[::-1])
@@ -123,60 +123,92 @@ print(nums)
 
 #실습
 #특정 요소 삭제 + 앞/뒤 리스트 연결해 새 리스트 result를 출력
-fruits = ["apple", "banana", "cherry", "grape", "watermelon", "strawberry"]
-del fruits[1:4]
-result = fruits[:1] + fruits[1:] #fruits 의 범위 A, B를 합친 값이 result란 뜻 
+#fruits = ["apple", "banana", "cherry", "grape", "watermelon", "strawberry"]
+#del fruits[1:4]
+#result = fruits[:1] + fruits[1:] #fruits 의 범위 A, B를 합친 값이 result란 뜻 
 #ㄴ 오답노트 표기 
-print(result)
+#print(result)
 
-letters = ["A", "B"]
-new_letters = letters * 3
-del new_letters[2]
-print(new_letters)
+#letters = ["A", "B"]
+#new_letters = letters * 3
+#del new_letters[2]
+#print(new_letters)
 #리스트를 3번 반복한 후, 전체 결과에서 중간에 있는 "A"만 삭제 출력
 
 #주요 메서드 : 내장된 함수. 
 #len(리스트 명칭) : 리스트 안 요소 갯수를 세줌.
-number = [1,2,3,4]
-print("길이 값", len(number), len("Coding")) #len(삽입할 내용) 해도 바로 출력됨
+#number = [1,2,3,4]
+#print("길이 값", len(number), len("Coding")) #len(삽입할 내용) 해도 바로 출력됨
 
 #삽입
-number.append (5)
-number.append (6)
-number.append (7)
-print("append 연습", number)
+#number.append (5)
+#number.append (6)
+#number.append (7)
+#print("append 연습", number)
 
-number.insert(2,2.5) #(인덱스위치, 값)
-number.insert(4,3.5)
-print("insert 실행", number)
+#number.insert(2,2.5) #(인덱스위치, 값)
+#number.insert(4,3.5)
+#print("insert 실행", number)
 
-number.extend([8,9]) #여러개 삽입 명령어
-print("extend 실행",number)
+#number.extend([8,9]) #여러개 삽입 명령어
+#print("extend 실행",number)
 
 #삭제
-number.remove(2.5) #리스트에 있는 값 지정해 삭제
-number.remove(3.5)
-print("remove 실행",number)
+#number.remove(2.5) #리스트에 있는 값 지정해 삭제
+#number.remove(3.5)
+#print("remove 실행",number)
 
-a = number.pop(4) #4 인덱스에 삭제한 요소 (5)
-print("pop 실행, 삭제한 요소 값", a)
-print(number)
-b = number.pop() #공백일 시 맨 뒷 요소 삭제 됨
-print("pop 실행, 삭제한 요소 값", b)
-print(number) 
+#a = number.pop(4) #4 인덱스에 삭제한 요소 (5)
+#print("pop 실행, 삭제한 요소 값", a)
+#print(number)
+#b = number.pop() #공백일 시 맨 뒷 요소 삭제 됨
+#print("pop 실행, 삭제한 요소 값", b)
+#print(number) 
 
 #list.sort() : (리스트명칭).sort 원본 리스트를 정렬
 #sorted(list) : 정렬된 새로운 리스트 반환
 #오름차순 기본, .sort(reverse=True) 옵션을 주면 내림차순으로 정렬
-number = [3,2,1,5,4]
-number.sort()
-print("sort 실행",number)
-number.sort(reverse=True)
-print("sort reverse=true 실행",number)
+#number = [3,2,1,5,4]
+#number.sort()
+#print("sort 실행",number)
+#number.sort(reverse=True)
+#print("sort reverse=true 실행",number)
 
-number1 = [10,20,40,50,30]
-new_number = sorted(number1)
-new_number_desc = sorted(number1, reverse=True)
-print("sorted 실행", number1, new_number, new_number_desc)
+#number1 = [10,20,40,50,30]
+#new_number = sorted(number1)
+#new_number_desc = sorted(number1, reverse=True)
+#print("sorted 실행", number1, new_number, new_number_desc)
 
 #리스트.reverse() 리스트 뒤집기 (원본 변경)
+#number = [100,101,104,103,102]
+#number.reverse()
+#print("reverse 실행", number) # [102, 103, 104, 101, 100] 나옴
+
+#number2 = list(reversed(number)) #원본 배열이 바뀌지 않는다. 앞에 list()해야 함.
+#print("reversed 실행", number, number2)
+
+#count, min ,max, sum
+#number = [1,2,2,2,3,2,4,5,6,7]
+#print("count 실행", number.count(2)) #4 나옴
+#print("min,max 실행", min(number), max(number)) #1, 7
+#print("sum 실행", sum(number)) # 34 , 요소들의 합
+
+#실습
+기차 = ["철수","영희"]
+기차.append("민수")
+기차.append("지훈")
+기차.remove("영희")
+기차.insert(1,"수진") #오답노트, 1번 자리가 1 인덱스 뜻하는 거 같다. 그럼 철수- 수진이다. 
+기차.remove("민수")
+기차.reverse()
+print(기차)
+
+#실습2
+카드 = [5,3,7]
+카드.append(4)
+카드.append(9)
+print("min, max",min(카드),max(카드))
+print(sum(카드))
+카드.sort()
+카드.pop()
+print(카드)
