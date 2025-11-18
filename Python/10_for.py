@@ -243,15 +243,17 @@ for n in range(a):
 #역삼각형은?
 a = int(input("몇 줄?: "))
 
+'''
 for n in range(a):
     print(" " * (a - (n+1)), end="") 
     print('*' * (n+1))
 #a값을 지정하고, a=10 - (n+1)=a의 시작점+1 만큼의 여백을 만든다. 
 #공백을 줄바꿈으로 정리
+'''
 
 for i in range(1,a+1):
     #공백 출력
-    for j in range(n-1):
+    for j in range(a-i):
         print(" ", end="")
     for j in range(i):
         print("*",end="")
