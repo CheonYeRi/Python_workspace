@@ -212,6 +212,7 @@ for i in range(5):
     print()
 '''
 
+'''
 #실습
 
 # 구구단만들기 for문 중첩 활용해서.
@@ -243,14 +244,13 @@ for n in range(a):
 #역삼각형은?
 a = int(input("몇 줄?: "))
 
-'''
 for n in range(a):
     print(" " * (a - (n+1)), end="") 
     print('*' * (n+1))
 #a값을 지정하고, a=10 - (n+1)=a의 시작점+1 만큼의 여백을 만든다. 
 #공백을 줄바꿈으로 정리
 '''
-
+'''
 for i in range(1,a+1):
     #공백 출력
     for j in range(a-i):
@@ -258,3 +258,49 @@ for i in range(1,a+1):
     for j in range(i):
         print("*",end="")
     print()
+
+#받은 답안 비교용 원본
+# 오른쪽 정렬
+n = int(input("몇 줄?:"))
+for i in range(1, n+1):
+  for j in range(n - i):
+    print(" ", end="")
+  for j in range(i):
+    print("*", end="")
+  print()
+'''
+
+
+
+#리스트 컴프리헨션
+#for 문을 리스트에 한 줄로 축약하여 새 리스트를 생성하는 문법
+#[표현식(리스트의 원소) for 변수 in 반복대상 if 조건문] if 조건문 없어도 ㄱㅊ
+# 표현식 : 값을 유도하는 식(표현)
+
+#for문 이용
+#squares = []
+#for x in range(1,6):
+#    squares.append(x ** 2)
+#print(squares)
+
+#리스트 컨프리헨션
+#squares2 = [x ** 2 for x in range(1,6)]
+#print(squares2)
+#squares3 = [x ** 2 for x in range(2,6) if = 1 == g] #정수 추가
+#print(squares3)
+
+# 실습 
+# 1부터1 0까지의숫자에 대해, 각수의제곱값을요소로갖는리스트를리스트컴프리헨션
+cphs = [n ** 2 for n in range (1,11)]
+print(cphs)
+
+cphs2 = [x for x in range(0,51) if x % 3 == 0] 
+#앞의 표현식은 변수값(x)만 두고 없어도 딘다.
+# x % 3 == 0 < 3으로 나눴을때 0이 된다 = 3의 배수다.
+print(cphs2)
+
+fruits = ["apple", "fig", "banana", "plum", "cherry", "pear", "orange"]
+cphs3 = [f for f in fruits if len(f) >= 5] 
+#변수 f만 나오게, fruits 중의 f(변수)가 글자수(len) 5보다 같거나 크게란 뜻
+print(cphs3)
+#차집합으로 할 수 있을까? <나중에 시도
