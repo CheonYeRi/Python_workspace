@@ -220,7 +220,7 @@ while True:
     break
     
 '''
-
+'''
 #추가 실습3
 ID = "abc123"
 PW = "7789"
@@ -241,8 +241,8 @@ while True:
 
     print("종료합니다.")
     break
-
-
+'''
+'''
 while True: 
     print ("===로그인 화면===", sep="")
     In = input("1. 로그인 2. 종료 (1/2) 선택: ")
@@ -259,4 +259,37 @@ while True:
 
     print("종료합니다.")
     break
+'''
+ID = "abc123"
+PW = "7789"
 
+while True: 
+    print ("===로그인 화면===")
+    In = input("1. 로그인 2. 종료 (1/2) 선택: ")
+
+    if In == "1":
+        id = input("아이디를 입력하세요: ")
+        pw = input("비밀번호를 입력하세요.: ")
+
+        if id != ID or pw != PW:
+            print("로그인 실패! 다시 시도해주세요.")
+            continue
+        else:
+            print("로그인 성공!")
+
+            while True:
+                print("=== 메뉴 ===")
+                In_1 = input("1. 정보 보기 2. 설정 3. 로그아웃 (1/2/3): ")
+
+                if In_1 == "1":
+                    print("회원 정보 입니다.")
+
+                elif In_1 == "2":
+                    print("설정 메뉴 입니다.")
+                
+                else:
+                    print("로그아웃 합니다.")
+                    break
+    else:
+        print("프로그램을 종료합니다.")
+        break
