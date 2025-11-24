@@ -224,7 +224,7 @@ print(ex1.value) #setter 작동함.
 ex1.value = -100
 print(ex1.value) 
 '''
-
+'''
 #실습
 # UserAccount 클래스 비밀번호 보호
 
@@ -255,3 +255,29 @@ print(user1.set_check(123456)) #ture
 print(user1.change_password(123, 123789)) #비밀번호 불일치
 print(user1.change_password(123456, 1123)) #비밀번호 변경되었습니다. (변경 번호)
 print(user1.set_check(1111)) #false
+
+'''
+
+#Student 클래스: 성적검증(@property 사용)
+
+class Student:
+    def __init__(self,score):
+        self.__score = score
+
+    #getter
+    @property
+    def get_score(self):
+        return self.__score
+    
+    #setter
+    @get_score.setter
+    def set_ver(self, value):
+        if 0 <= value <= 100:
+            self.__score = value
+        else:
+            raise ValueError("유효하지 않습니다.")
+
+s1 = Student(80)
+print(f"이 학생의 점수는 {s1.set_ver}점 입니다.")
+s1.set_ver = -120
+print(s1.set_ver)
