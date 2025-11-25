@@ -256,7 +256,6 @@ print(user1.change_password(123, 123789)) #비밀번호 불일치
 print(user1.change_password(123456, 1123)) #비밀번호 변경되었습니다. (변경 번호)
 print(user1.set_check(1111)) #false
 
-'''
 
 #Student 클래스: 성적검증(@property 사용)
 
@@ -281,3 +280,207 @@ s1 = Student(80)
 print(f"이 학생의 점수는 {s1.set_ver}점 입니다.")
 s1.set_ver = -120
 print(s1.set_ver)
+
+'''
+'''
+#모범 답안
+class UserAccount:
+    def __init__(self, username, password):
+        self.username = username
+        self.__password = password
+
+    def change_password(self, old_pw, new_pw):
+        if old_pw == self.__password:
+            self.__password = new_pw
+            print("비밀번호 변경되었습니다.")
+        else:
+            print("기존 비밀번호와 일치하지 않습니다.")
+
+    #setter
+    def check_password(self, password):
+        return self.__password == password
+    
+user1 = UserAccount("asd", 123456)
+
+print(user1.username)
+#print(user1.__password)
+user1.check_password("123456")
+
+
+#모범 답안
+class Student:
+    def __init__(self,name, score):
+        self.name = name
+        self.__score = score
+
+    #getter
+    @property
+    def get_score(self):
+        return self.__score
+    
+    #setter
+    @get_score.setter
+    def set_ver(self, value):
+        if 0 <= value <= 100:
+            self.__score = value
+        else:
+            raise ValueError("유효하지 않습니다.")
+        
+
+# 상속
+# 부모 클래스의 속성과 메서드를 물려받아 새로운 자녀 클래스를 만드는 것
+
+#상속 기본 문법
+#부모 클래스
+
+class Animal:
+    def __init__(self,name):
+        self.name = name
+
+    def bark(self):
+        print("동물 소리를 냅니다.")
+
+class Dag(Animal):
+    pass
+
+# super() 사용
+
+class Animal:
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print("동물 소리를 냅니다.")
+
+class Dog(Animal):
+    def __init__(self, name, age, species):
+        super().__init__(name, age) 
+        #__init__ 누르자마자 바로 부모 클래스 메서드 갖고 왔다;
+        # super는 부모 가리킴
+        self.species = species
+
+    #오버라이딩
+    def bark(self):
+        super().bark() #부모 클래스의 메서드도 적용
+        print("멍멍")
+
+
+
+dog = Dog("구름이",5, "포메라니안")
+dog.bark()
+print(dog.name)
+print(dog.species) #부모 클래스에 없는 속성값을 추가해도 적용 된다. 
+
+
+# 실습
+class Shape:
+    def __init__(self,sides,bass):
+        self.sides = sides
+        self.bass = bass
+
+    def printlnfo(self):
+        return print (f"변의 개수: {self.sides} , 밑변의 길이: {self.bass}")
+    
+    def area(self):
+        print("넓이 계산이 정의되지 않았습니다.")
+
+class Rectangle(Shape):
+    def __init__(self, sides, bass, heigh):
+        super().__init__(sides, bass)
+        self.heigh = heigh
+
+    def area(self):
+        area = self.heigh * self.bass
+        print (f"{self.sides}사각형의 넓이: {area}")
+    
+class Triangle(Shape):
+    def __init__(self, sides, bass, heigh):
+        super().__init__(sides, bass)
+        self.heigh = heigh
+
+    def area(self):
+        area = int((self.bass * self.heigh) / 2) #area 값은 이거다의 계산식으로 수정
+        print(f"{self.sides}의 넓이 {area}")
+    
+rect = Rectangle(4,10,5)
+rect.printlnfo()
+rect.area()
+
+tri = Triangle(4,8,10)
+tri.printlnfo()
+tri.area()
+
+
+'''
+'''
+#추상 클래스 (파이썬에만 있는 개념은 아니다)
+#(Abstract Class)
+# 클래스의 구조를 정의하는 클래스
+
+from abc import ABC, abstractmethod
+#abc에서 ABC, abstractmethod 가져온다.
+
+class Animal(ABC):
+    #추상 메서드
+    @abstractmethod #자식 클래스에서 꼭 구현해라
+    def bark(self):
+        pass
+    #메서드는 여러개 만들어도 됨.
+
+class Dog(Animal):
+    def bark(self): #부모 메서드에 있는 걸 갖고와 온전히 구현해둬야 한다.
+        print("멍멍")
+
+#a = Animal() #TypeError: Can't instantiate abstract class Animal 에러남.
+a = Dog()
+a.bark() #멍멍
+'''
+
+#실습
+
+from abc import ABC, abstractmethod
+
+class Payment(ABC):
+    @abstractmethod
+    def pay(self,amount):
+        pass
+
+class CardPayment(Payment):
+    def pay(self, amount):
+        self.amount = amount
+        print(f"카드로 {self.amount}원을 결제합니다")
+
+class CashPayment(Payment):
+    def pay(self, amount):
+        self.amount = amount
+        print(f"현금으로 {self.amount}원 결제합니다.")
+
+amo = CardPayment()
+amo.pay(15000)
+amo1 = CashPayment()
+amo1.pay(20000)
+
+'''
+#모범 답안
+from abc import ABC, abstractmethod
+
+class Payment(ABC):
+    @abstractmethod
+    def pay(self,amount):
+        pass
+
+class CardPayment(Payment):
+    def __init__(self):
+        #pass 가능, 알아서 동작해줌.
+        super().__init__()
+
+    def pay(self, amount):
+        self.amount = amount
+        print(f"카드로 {self.amount}원을 결제합니다")
+
+class CashPayment(Payment):
+    def pay(self, amount):
+        self.amount = amount
+        print(f"현금으로 {self.amount}원 결제합니다.")
+'''
