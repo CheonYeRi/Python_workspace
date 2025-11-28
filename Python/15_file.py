@@ -148,6 +148,8 @@ with open("words.txt", "r", encoding="utf-8") as f2:
 
 '''
 
+'''
+
 #모범 답안
 import os
 #os 모듈 갖고 온다. 운영 체제와 상호 작용하는 기능 제공
@@ -220,3 +222,36 @@ if login:
     print("전화번호 저장 완료!")
 else:
     print("\n로그인 실패!")
+
+'''
+import os
+
+#바이너리 파일 열기
+with open('./Python/images/ㄱㄴㅍㄱ.jpeg','rb') as f: #현재 디렉토리(.=PYTHON_WORKSPACE)/폴더명(Python)- 라는 뜻
+    img = f.read()
+    print(img)
+
+#바이너리 파일 쓰기
+with open("./Python_workspace/images/ㄱㄴㅍㄱ_copy.jpeg','wb'") as f:
+    f.writh(img)
+
+# pickle 모듈
+# 객체의 형태를 유지하면서 파일에 저장하고 불러올 수 있음
+
+import pickle
+
+#리스트, 딕셔너리 파일 저장
+with open('pickle.txt','wb') as f:
+    li = ['dog','cat'] #리스트 형식
+    dic = {1: 'dog', 2: 'cat'} #딕셔너리 양식 {}
+
+    pickle.dump(li, f)
+    pickle.dump(dic, f) 
+
+#읽기
+with open('pickle.txt','rb') as f:
+    li = pickle.load(f)
+    dic = pickle.load(f)
+
+    print(li, dic) #['dog', 'cat'] {1: 'dog', 2: 'cat'} 로 나옴.
+
