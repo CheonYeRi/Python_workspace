@@ -178,7 +178,7 @@ while times < 5:
     sum_age += age
 
 print(f"총 나이 합계는 {sum_age}, 평균은 {int(sum_age / times)} 입니다.") 
-'''
+
 '''
 # 중첩 while문
 #예제
@@ -318,7 +318,7 @@ while True:
         print("로그인 성공")
         break
     break
-'''
+
 #문제 2
 ID = "coodingon"
 PW = "abc123"
