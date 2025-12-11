@@ -27,7 +27,7 @@ my_instance.method_name() #이 인스턴스 이름은 I1 입니다.
 
 #another_instance = ClassName("I2")
 #another_instance.name() 
-
+'''
 #실습
 # 책 클래스 만들기
 class BookClass:
@@ -52,7 +52,7 @@ class BookClass:
 book1 = BookClass("넥서스","유발 할라리", 500, 1)
 book1.read_page(10) #10 추가하겠다.
 book1.progress()
-
+'''
 # Rectangle 클래스 구현
 class Rectangle_Mathod:
     def __init__(self, width, height):
@@ -106,8 +106,8 @@ book2 = Book_1("a2","def")
 print(Book_1.book_count)
 Book_1.get_count()
 
-'''
 
+'''
 '''
 # 정적 메서드
 # 클래스나 인스턴스의 데이터를 조작하지 않는 클래스 메서드
