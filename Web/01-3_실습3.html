@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- table 태그 -->
+    <h2>colspan과 rowspan</h2>
+    <table border="1" cellspacing="0" cellpadding="5" width="400">
+        <tr>
+            <td colspan="2"><center>1</center></td>
+            <td rowspan="3"><center>2</center></td>
+        </tr>
+        <tr>
+            <td rowspan="2"><center>3</center></td>
+            <td><center>center</center></td>
+        </tr>
+        <tr>
+            <td><center>4</center></td> <!-- td colspan="2"에 4해도 됨-->
+        </tr>
+    </table>
+    <hr>
+    <h2>카페 음료 주문 테이블</h2>
+    <table border="1" cellspacing="0" width="500">
+        <!--style="text-align: center;" 하면 전체 정렬 가능함 CSS-->
+        <tr>
+            <td align="center" width="50">구분</td>
+            <td align="center">음료</td>
+            <td align="center">가격</td>
+            <td align="center">이미지</td>
+        </tr>
+        <tr>
+            <td rowspan="2" align="center">커피류</td>
+            <td align="center">멜팅 피스타치오</td>
+            <td align="center" width="100">
+                L: 4500 
+                <br>
+                EX: 5700
+            </td>
+            <td>
+                <a href="https://brand.naver.com/ediyacoffeegift/products/12610578446" target="_blank">
+                <img src="https://img1.kakaocdn.net/thumb/C320x320@2x.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20251027155436_06c973bcc8e047eaae71dfc941c325af.jpg" 
+                alt="멜팅 피스타치오" width="200">
+            </td>
+        </tr>
+        <tr>
+            
+            <td align="center">ICED 너티 초콜릿</td>
+            <td align="center">
+                L: 4700 
+                <br>
+                EX: 5900
+            </td>
+            <td>
+                <a href="https://brand.naver.com/ediyacoffeegift/products/12610573206" target="_blank">
+                <img src="https://img1.kakaocdn.net/thumb/C305x305@2x.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20251027155420_4966cf817869499d86a7ae32f920fdaa.jpg" 
+                alt="ICED 너티 초콜릿" width="200">
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2" align="center">티</td>
+            <td align="center">딸기자두 요구르트(ICED ONLY)</td>
+            <td align="center">
+                L: 4500 
+                <br>
+                EX: 4900
+            </td>
+            <td>
+                <a href="https://brand.naver.com/ediyacoffeegift/products/12764472471" target="_blank">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxspsOirozZstFzdaZJhyyFFENIWJGAS6yhQ&s" 
+                alt="딸기자두 요구르트" width="200">
+            </td>
+        </tr>
+        <tr>
+
+            <td align="center">치즈폼 딸기라떼</td>
+            <td align="center">
+                L: 5200
+                <br>
+                EX: 6400
+            </td>
+            <td>
+                <a href="https://brand.naver.com/ediyacoffeegift/products/12764417840" target="_blank">
+                <img src="https://bizimg.giftishow.com/Resource/goods/2025/G00005081402/G00005081402.jpg" 
+                alt="치즈폼 딸기라떼" width="200">
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

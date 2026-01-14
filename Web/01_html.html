@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 문서 정보 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 문서 제목 -->
+    <title>Document</title>
+    <!-- style 정보 -->
+    <style></style>
+    <!-- link: 외부 리소스와의 연결 정의-->
+    <link rel="stylesheet" href="">
+    <!-- script: javascript 정의 -->
+    <script></script>
+</head>
+<body>
+    <!-- 시작 시 ! 입력하면 기본 틀 자동 생성함. !-- 사용하면 주석 처리 가능 -->
+    <!-- 셀프 클로징: <br /> 끝지점을 / 로 닫아둠. -->
+    <!-- vs code 에서 live server 설치하면 오른쪽 하단에 생성, 그걸 통해 html 파일 실행 확인-->
+    <!-- 그외 Auto Rename Tag(수정 시 태그 쌍으로 같이 수정)와 VScode icorn(파일아이콘 표시), indent-rainbow(들여쓰기 구분)-->
+    
+    <!-- 제목태그-->
+    <h1>안녕하세요</h1>
+    <h2>안녕하세요</h2>
+    <h3>제목은 전부 블록 태그</h3>
+    <h4>h1부터 6까지 존재한다.</h4>
+    <h5>실행해보면 글자 크기가 다르다.</h5>
+    <h6>여기다 설명 쓰는 중</h6>
+    <!-- 본문 태그 -->
+    <!-- lorem 입력하면 자동완성 아무말 써준다. 인디자인에 있는 아무말 생성기 같다.-->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio recusandae sunt saepe ipsa cum, necessitatibus iure. Mollitia accusantium, sunt accusamus, magnam praesentium at atque eius, quisquam exercitationem optio corrupti a!</p>
+    <!-- 줄 바꿈 태그 -->
+    <span>인라인</span>
+    <br>
+    <span>인라인</span>
+    <!-- span하면 두 span끼리 이어서 나오나 그 사이에 <br> 넣으면 줄 바꿈 됨 -->
+    <br>
+    <!-- 수평 줄 -->
+    <hr />
+
+    <!-- 순서 없는 목록, type 마커 모양: circle, square, none-->
+    <ul>
+        <li>사과</li>
+        <li>바나나</li>
+        <li>포도</li>
+    </ul>
+
+    <!-- 순서 있는 목록 -->
+    <!-- type: 1, A, a, I, i -->
+    <ol type="i" start="3" reversed>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ol>
+
+    <!-- 라이브 서버 장점 : 실시간 수정, 확인. 절대경로로 열었을 경우 새로고침 해야 갱신됨-->
+    <!-- 인라인은 기본적인 걸 제공하기 때문에 추가 가공이 어렵다.-->
+
+    <span><b>두껍게</b></span>
+    <span><strong>STRONG</strong></span>
+
+    <!-- img 태그 -->
+    <!--이미지도 인라인 요소이나 크기 지정 가능, alt는 이미지 안 나올 때 텍스트로 대체함. src는 경로 지정 -->
+    <img src="https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/4arX/image/kHEyaIBkalJXnxwx46z7kY5Kwoc.jpg"
+    alt="기니피그" width="500">
+    <!-- 상대 경로 -->
+    <img src ="./eJDMXNwSPjnEvDi4r6cEMt1yddU.jpg" alt = "기니피그" width="300">
+    <!-- 절대 경로(pc) -->
+    <img src="C:\Users\heclo\OneDrive\바탕 화면\ㄱㄴㅍㄱ.jpeg" alt = "기니피그" width="400">
+    <!-- 절대 경로(라이브 서버)-->
+    <!-- 라이버 서버의 주소 처음- 포트까지는 라이브서버가 접근할 수 있는 위치란 뜻-->
+    <img src="/Web/eJDMXNwSPjnEvDi4r6cEMt1yddU.jpg" alt="동물" width="200">
+    
+    <br>
+    <!-- a 태그 : 링크 연결 -->
+    <a href="/">인라인 요소</a>
+    <br>
+    <a href="https://www.naver.com/" target="_blank">네이버</a>
+
+    <hr> <!-- 경계선 생성 -->
+    <!-- form, input 태그 -->
+     <form>
+        <input type="button" value="버튼">
+        <input type="text">
+        <input type="password" name="" id="">
+        <input type="checkbox" name="fruits" value="apple" checked> 사과 <!-- checked 설정 시 체크 상태로 생성-->
+        <input type="checkbox" name="fruits" value="banana"> 바나나
+        <br>
+        <input type="radio" name="gender" value="man">남자
+        <input type="radio" name="gender" value="woman">여자
+        <input type="radio" name="gender" value="other">그 외
+        <input type="date" name="" id="">
+        <input type="datetime-local" name="" id="">
+        <br>
+        <select name="" id="">
+            <optgroup label="커피">
+                <option value="americano">아메리카노</option>
+                <option value="latte">카페라떼</option>
+                <option value="espresso">에스프레소</option>
+            </optgroup>
+            <optgroup label="주스">
+                <option value="orange" selected>오렌지 주스</option>
+                <option value="kiwi">키위</option>
+            </optgroup>
+        </select>
+        <!--htmltagwrap 확장자 설치: 드래그로 범위 지정 후 alt + W 시 자동 감싸기-->
+     </form>
+    <hr>
+
+    <!-- table 태그 -->
+    <table border="1" cellspacing="0" cellpadding="5" width="300"> <!--border는 테두리 생성-->
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+            <th>전화번호</th>
+        </tr>
+        <tr>
+            <td rowspan="2">홍길동</td>
+            <td colspan="2">20</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>010-1252-1111</td>            
+        </tr>
+        <tr>
+            <td>홍길동</td>
+            <td>20</td>
+            <td>010-1252-1111</td>            
+        </tr>
+    </table>
+    
+
+</body>
+
+
+</html>
