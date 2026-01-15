@@ -1,0 +1,73 @@
+/* 전체 선택자 */
+/* *{
+    color: aqua;
+} */
+
+/* 태그 선택자: 태그 이름 */
+
+h1 {
+    color: blueviolet;
+}
+
+p {
+    background-color: black;
+}
+
+/* 클래스 선택자: .클래스 이름 */
+.font {
+    font-size: 25px;
+    color: red;
+}
+
+.bg {
+    background-color:blue
+}
+
+.font.bg{
+    font-size: 30px;
+    color: white;
+    background-color: turquoise;
+}
+
+/*아이디 선택자: #아이디 이름*/
+
+#second {
+    font-weight: 900;
+} 
+
+/*-----*/
+/* 복합 선택자 */
+
+/* 하위 선택자 */
+body section {
+    border: 1px soild darkblue;
+    padding: 10px;
+}
+
+body .first {
+        background-color: aliceblue;
+}
+
+.first .front {
+    font-size: 25px;
+}
+
+/* 자식 선택자 : > */
+
+section > ul {
+    color: blue;
+} /* 미적용: section */
+
+section > div {
+    font-size: 30px;
+}
+
+/* 인접 형제 선택자(+) */
+.front + li {
+    background-color: aqua;
+} /* 인접한 li 하나만 적용됨 */
+
+/* 일반 형제 선택자 : ~ */
+.front ~ li {
+    color: crimson;
+} /* li 아이유에 지정한 front 기준으로 li 리스트 전부 지정 */ 

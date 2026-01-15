@@ -1,0 +1,60 @@
+.div1 {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: aqua;
+    cursor: pointer;
+}
+
+/* hover */ 
+.div1:hover {
+    background-color: aquamarine;
+}
+/* active */ 
+.div1:active {
+    background-color: tomato;
+}
+
+.btn {
+    margin-top: 20px; /*위쪽 간격 생성 */
+    background-color: aqua;
+    cursor: pointer;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.btn:hover{
+    background-color: coral;
+}
+
+.btn:active{
+    background-color: aliceblue;
+    color: crimson;
+}
+
+/* focus */
+input:focus{
+    background-color: beige;
+}
+
+/* 가상 클래스 선택자 */
+.fruits *:first-child{
+    background-color: coral;
+}
+
+.fruits *:last-child{
+    background-color: burlywood;
+}
+
+.fruits li:nth-child(2) {
+    background-color: green;
+} /*2번째 위치 li apple 지정 */
+
+.fruits li:nth-child(2n +1) {
+    background-color: tomato;
+}
+
+.fruits *:not(li) {
+    color: blue;
+} /*li가 아닌 요소들 지정 */

@@ -1,0 +1,62 @@
+/* 전체 선택자 */
+/* *{
+    color: white;
+    background-color: gray;
+} */
+
+/* 태그 선택자: 태그 이름 */
+/* 
+span {
+    background-color: red;
+} */
+
+/* 클래스 선택자: .클래스 이름 */
+.second {
+    background-color: green;
+}
+
+/*아이디 선택자: #아이디 이름*/
+
+#first {
+    background-color: blue;
+}
+
+
+/* 실습2 */
+/* 하위 선택자 */
+body ul {
+    background-color: aliceblue;
+}
+
+.zoo{
+
+}
+
+div + p {
+    background-color: red;
+}
+
+.lion {
+    color: sienna;
+}
+
+#tiger {
+    background-color: yellow;
+}
+
+/* 자식 선택자 : > */
+
+ul > .lion {
+        background-color: greenyellow;
+        font-weight: bold;
+}
+
+/* 인접 형제 선택자(+) */
+#tiger + li {
+    background-color: skyblue;
+} 
+
+/* 일반 형제 선택자 : ~ */
+ul li ~ li {
+    background-color: orange;
+} 
