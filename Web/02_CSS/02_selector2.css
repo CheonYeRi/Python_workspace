@@ -58,3 +58,21 @@ input:focus{
 .fruits *:not(li) {
     color: blue;
 } /*li가 아닌 요소들 지정 */
+
+/* 가상 요소 선택자 :애프터, 비포는 ::로 함*/
+.box::after {
+    content: '목록';
+}
+
+.box::before {
+    content: '추천';
+}
+
+/* 속성 선택자: [] */
+[disabled] {
+    background-color: red;
+}
+
+input:not([disabled]) {
+    background-color: blue;
+}

@@ -24,6 +24,41 @@
             background-color: yellow;
         }
 
+        .box::after {
+            content: '빨리!';
+            color: red;
+        }
+
+        .box::before {
+            content: '택시';
+            color: blue;
+        }
+
+        [disabled] {
+            background-color: red;
+        }
+
+        input:not([placeholder]) {
+            background-color: blue;
+        }
+
+        [placeholder=이름] {
+            background-color: orange;
+        }
+
+        /* 속성값이 특정 단어를 포함하는 요소 ~= */
+        [class~='note'] {
+            background-color: teal;
+        }
+
+        /* 속성값이 특정 접두사로 시작하는 경우 ^= */
+        [href^='https'] {
+            color: red;
+        }
+
+        /* 속성값이 특정 접미사로 끝나는 경우 $= */
+        /* 속성값이 특정 문자열을 포함하는 요소 *= */
+
     </style>
 </head>
 <body>
@@ -45,6 +80,18 @@
         <div>yellow</div>
         <div>navy</div>
     </div>
+
+    <div class="box">여기요!</div>
+
+
+    <input type="text" placeholder="이름" />
+    <input type="password" value="pw" />
+    <input type="text" value="000-0000-0000" />
+    <input type="text" placeholder="핸드폰" />
+    <input type="text" placeholder="주민번호" disabled />
+
+    <!-- 추가 연습 -->
+    <p class="note"> 속성 선택자 연습 중</p>
 
 </body>
 </html>

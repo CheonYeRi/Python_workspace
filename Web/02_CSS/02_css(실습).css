@@ -60,3 +60,15 @@ ul > .lion {
 ul li ~ li {
     background-color: orange;
 } 
+
+
+/* 가상요소 선택자 실습 */
+.box::after {
+    content: '택시';
+    color: blue;
+}
+
+.box::before {
+    content: '빨리!';
+    color: red;
+}

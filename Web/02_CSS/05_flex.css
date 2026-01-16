@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    /*flex 방향*/
+    flex-direction: row-reverse;
+    /* 주축 기준 정렬 */
+    /*justify-content: center;
+    justify-content: space-around
+    justify-content: space-between
+    justify-content: space-evenly*/
+    align-items: center;
+}
+
+.item {
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    background-color: antiquewhite;
+}
