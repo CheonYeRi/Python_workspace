@@ -97,15 +97,15 @@ console.log('reverse:', users);
 
 //배열 순회 메서드
 //함수 안에 함수 또 넣는 걸 콜백 함수라고 함.
-//map : 배열을 순회하면서 매개변수로 전달받은 콜백함수를 적용(원본 변경 X)
+// 1 map : 배열을 순회하면서 매개변수로 전달받은 콜백함수를 적용(원본 변경 X)
 num = num.map((x)=> x*2); //각 요소를 한 번 씩 선택해서 매개변수(x)로 전달하고, 전달받은 x에 2를 곱해서 배열 재할당
 console.log(num);
 
-// filter : callback 함수를 기준으로 요소를 필터링해서 반환 (원본 변경 X)
+// 2 filter : callback 함수를 기준으로 요소를 필터링해서 반환 (원본 변경 X)
 let filtered = num.filter((x) => x > 5);
 console.log(filtered);
 
-//reduce : 앞 요소에 대해 뒤 요소를 연산한 결과를 누적
+// 3 reduce : 앞 요소에 대해 뒤 요소를 연산한 결과를 누적
 let sum = num.reduce((acc, cur) => acc + cur, 0);
 // 두 번째 매개변수로 받은 0에 배열을 순회하면서 앞 요소에 뒷 요소를 더한 값을 반환
 console.log(sum); //800
@@ -115,3 +115,131 @@ for (let i = 0; i < num.length; i++) {
     sum2 += num[i];
 }
 console.log(sum2); // 840
+
+// 4 반복문
+let fruits = ['수박', '참외', '귤', '오렌지', '딸기'];
+
+// 4-1 for문 -> 인덱스 기반
+//출력 결과
+// for문 활용 배열의 1번째 요소 출력: 수박
+for (let i = 0; i < fruits.length; i++){
+    console.log(`배열 ${i+1}번째 요소 출력: ${fruits[i]}`);
+}
+
+// 4-2 for of 문
+for (let fruit of fruits) { //fruits라는 배열로 부터(of) 해병 배열의 요소들을 fruit라고 부르며 배열 순회함
+    console.log(`for of문 활용 배열의 fruit 출력:${fruit}`);
+}
+
+// 5. 배열 메서드 forEach
+fruits.forEach((fruit, index) => 
+    console.log(`forEach 활용 배열의 ${index}번째 요소 출력: ${fruit}`)
+);
+//순서가 중요하기 때문에 f, i 매개변수 명칭을 써도 적용된다.
+//요소 명, 인덱스 위치, 배열 로 지정되고 2, 3번 째 변수는 생략 가능하다.
+
+
+console.log('=== 실습 1 ===');
+// 1 ~ 100 까지 배열을 for문을 사용해서 만들고 배열의 합 구하기.
+let numbers = []; // 정수 생성
+
+for (let i = 1; i <= 100; i++){
+    numbers.push(i);
+}
+console.log('원본 배열',numbers);
+
+let i_sum = 0;
+for (let num of numbers) {
+    i_sum += num;
+}
+
+let i_sum1 = 0;
+numbers.forEach((n) => i_sum1 += n);
+
+// reduce 활용
+let i_sum2 = numbers.reduce((acc, cur) => acc + cur);
+console.log(i_sum2)
+
+console.log('=== 실습 2 ===');
+
+let fruits1 = ["사과", "딸기", "파인애플", "수박", "참외", "오렌지", "자두", "망고"];
+let fruits2 = ["수박", "사과", "참외", "오렌지", "파인애플", "망고"];
+// 두 배열에서 동일한 요소만을 가지는 배열 same 만들기
+// 두 배열에서 다른 요소만을 가지는 배열 diff 만들기
+// filter : callback 함수를 기준으로 요소를 필터링해서 반환 사용
+
+
+//오퍼레이터 파트 참고, 
+let same = fruits1.filter((fruit) => fruits2.includes(fruit));
+console.log('same 배열 출력:',same);
+
+let diff = fruits1.filter((fruit) => !fruits2.includes(fruit));
+console.log('diff 배열 출력:',diff); // 부정연산자 사용
+
+console.log('=== 실습 3 ===');
+// 평일/ 주말 구분
+//JS 내장된 Date 객체 활용
+//Date.getDay(): 요일별로 0-6(일~토)로 숫자 변경
+let now = new Date();
+console.log(now.getDay()); // 금요일 기준 5
+
+let nowDay = new Date().getDay();
+
+// switch
+switch (nowDay) {
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+        console.log('평일');
+        break;
+    case 6:
+    case 0:
+        console.log('주말');
+    default:
+        console.log('알 수 없음');
+        break;
+}
+//if - else if 문
+if (nowDay === 0 ){
+    console.log('주말');
+} else if (nowDay === 1){
+    console.log('평일');
+} else if (nowDay === 2){
+    console.log('평일');
+} else if (nowDay === 3){
+    console.log('평일');
+} else if (nowDay === 4){
+    console.log('평일');
+} else if (nowDay === 5){
+    console.log('평일');
+} else if (nowDay === 6){
+    console.log('주말');
+}
+
+//if - else 문
+
+if(nowDay === 5 || nowDay === 1 || nowDay === 2 || nowDay === 3 || nowDay === 4){
+    console.log('평일');
+} else {
+    console.log('주말');
+}
+
+//삼항연산자
+let today = nowDay === 0 || nowDay === 6
+    ? '주말' : '평일';
+console.log(today) 
+
+console.log('=== 실습 4 ===');
+// 0 ~ 10 사이의 랜덤 숫자 출력
+// Math.random(): 0 이상 1 미만의 난수 생성
+// Math.floor(x): 양수 기준으로는 소숫점 버림, 음수 기준으로는 더 작은 음수로 소숫점 사라짐
+    // Math.floor(3.298405) - > 3 (소숫점 버림)
+    // Math.floor(-3.298405) - > -4 ::바닥으로 내린다는 맥락대로 더 낮은 값이 됨.
+
+console.log(Math.floor(Math.random() * 11));
+//0.2 * 10 = 2 , 0.354 * 10 = 3.54... 
+// Math.random() * 10 은 0이상 10미만의 결과 출력
+// 0 ~ 10 사이 얻기 위해서는, * 11 해야한다. 무조건 11 미만 숫자가 나오기 때문에
+// Math.floor 사용하면 0 ~ 10으로 반환 시켜준다.

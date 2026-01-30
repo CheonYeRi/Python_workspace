@@ -1,0 +1,40 @@
+let user = {
+    name: 'layla',
+    age: 20,
+    city: 'Seoul',
+};
+
+console.log('user 원본', user);
+
+//for ~ in
+for (let key in user){
+    console.log('key:', key, '| value', user[key]);
+}
+//[key]라고 안 쓰고 .key 하면 undefined 나온다.
+
+//객체
+// 문자열, 숫자, 배열 내장 메서드가 존재 (ex. concat, filter, sort...)
+// 하지만 객체는 내장 메서드 X
+//  객체는 키/값을 쌍으로 가지고 있다는 구조만 명확하고 
+//  해당 값의 타입, 의미, 용도가 전부 제각각이므로
+//  그래서 객체는 아예 Object라는 전역 내장 객체를 제공함
+
+// key 추출(배열로 반환)
+console.log('key 추출:', Object.keys(user)); 
+// JS에서 기본적으로 제공하는 Object 객체의 keys라는 메서드를 사용해서
+// 매개변수로 전달한 user 객체의 key들을 배열로 반환
+
+// 값 추출
+console.log('값 추출:',Object.values(user));
+
+// 키, 값 추출
+console.log('키, 값 추출:', Object.entries(user));
+
+let entries = [
+    ['name', 'layla'],
+    ['age', 20],
+    ['city', 'Seoul'],
+];
+
+// 배열을 객체로 변환
+console.log('배열을 객체로 변환',Object.fromEntries(entries));
