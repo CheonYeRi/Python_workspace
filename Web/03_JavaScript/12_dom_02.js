@@ -147,5 +147,8 @@ console.log('실습1')
 const newSp = document.createElement('span');
 newSp.textContent = "민트 초코는 맛있다.";
 console.log(newSp);
+newSp.innerHTML = `민트 초코는 맛없다.`;
+
+
 fruitsEl.before(newSp);
 console.log(document.body);
