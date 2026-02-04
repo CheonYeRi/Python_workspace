@@ -18,9 +18,22 @@ function App(){
     const a = 5;
     const b = 3;
     return(
+        <>
         <div>
             { a > b && <p>{a}가 {b}보다 큽니다.</p>}
         </div>
+
+        {/*실습 4번*/}
+        <h1 className="title">{title}</h1>
+        <div>
+            <div>
+                아이디: <input type='text'/>
+            </div>
+            <div>
+                비밀번호: <input type='text'/>
+            </div>
+        </div>
+        </>
     );
 }    
 
