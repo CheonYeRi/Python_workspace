@@ -1,6 +1,8 @@
 import Alphabet from './Alphabet';
 import Alphabet2 from './Alphabet2';
+import Alphabet3 from './Alphabet3';
 import './App.css';
+import MapUser from './map';
 
 function App() {
   return (
@@ -11,6 +13,12 @@ function App() {
 
     <hr />
       <Alphabet2 />
+
+    <hr />
+      <Alphabet3 />
+
+    <hr />
+      <MapUser />
     </>
   );
 }

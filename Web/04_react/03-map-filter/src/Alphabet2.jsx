@@ -18,6 +18,7 @@ function Alphabet2() {
             <input type="text" placeholder="알파벳 입력" value={inputValue} 
             onChange={(e)=> setInputValue(e.target.value)} />
             <button onClick={addAlpha}>ADD </button>
+            {/* value는 const 선언한 input변수들 넣고, onChange 마찬가지다 npm start해야 실행 */}
             <ol>
                 {alphabet.map((value,idx) => {
                     return <li key={idx}>{value}</li>;
