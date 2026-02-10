@@ -1,5 +1,5 @@
 
-function Input(setData) {
+function Input({setData}) {
 
     const handleChange = (e) => {
         const value = e.target.value(); //입력 값 가져온다.

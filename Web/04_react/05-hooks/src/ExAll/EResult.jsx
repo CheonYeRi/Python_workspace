@@ -1,4 +1,4 @@
-function Result(data) {
+function Result({data}) {
     const fruitE = {
         apple: "🍎",
         banana: "🍌",
@@ -6,6 +6,7 @@ function Result(data) {
         grape: "🍇",
         peach: "🍑",
     };
+    const{fruit, background,color,content} = data;
 
     return (
         <div 
@@ -15,9 +16,13 @@ function Result(data) {
                 textAlign: "center",
                 borderRadius: "8px",
             }}>
-                <h3>과일: {data.fruitE}</h3>
-                
+        <h3>과일: {fruit}</h3>
+        <h3>배경색: {background}</h3>
+        <h3>글자색: {color}</h3>
+        <p>내용: {content}</p>
 
+            <div style={{ fontSize: "50px", marginTop: "10px" }}>
+            {fruitE[fruit]}</div>
         </div>
     );
 }
